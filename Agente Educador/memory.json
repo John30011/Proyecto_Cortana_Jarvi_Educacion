@@ -1,0 +1,510 @@
+{
+  "project_name": "GEMINI",
+  "current_status": {
+    "last_updated": "2025-07-02T20:30:00-04:00",
+    "version": "1.1.1",
+    "release_notes": [
+      "Configuración de Supabase para autenticación",
+      "Resolución de conflictos de dependencias con --legacy-peer-deps",
+      "Implementación completa del módulo de autenticación",
+      "Mejoras en la interfaz de usuario",
+      "Integración con n8n para el chatbot",
+      "Mejoras de seguridad y rendimiento"
+    ],
+    "security_updates": {
+      "csp_configuration": {
+        "status": "configured",
+        "domains_allowed": [
+          "*.googlevideo.com",
+          "*.youtube.com",
+          "*.ytimg.com",
+          "rr*.googlevideo.com",
+          "*.sn-*.googlevideo.com"
+        ],
+        "configuration_file": "vite.config.ts",
+        "plugin_used": "vite-plugin-html",
+        "last_updated": "2025-06-30T06:28:10-04:00"
+      }
+    },
+    "frontend_updates": {
+      "courses_module": {
+        "last_updated": "2025-07-01T14:04:00-04:00",
+        "features": [
+          "Búsqueda en tiempo real por título, descripción y etiquetas",
+          "Sugerencias de búsqueda interactivas",
+          "Filtrado por categorías dinámicas",
+          "Visualización de filtros activos",
+          "Diseño totalmente responsivo"
+        ],
+        "components": {
+          "CourseCard": {
+            "features": [
+              "Diseño responsivo",
+              "Visualización de etiquetas",
+              "Efectos de hover",
+              "Mostrar calificación con estrellas",
+              "Formato de números de estudiantes",
+              "Soporte para imágenes con placeholders"
+            ],
+            "technologies": ["React", "TypeScript", "Chakra UI"]
+          },
+          "CursosPage": {
+            "features": [
+              "Búsqueda en tiempo real con sugerencias",
+              "Filtrado avanzado por categorías",
+              "Manejo de estados de carga y vacío",
+              "Diseño responsivo",
+              "Integración con el sistema de etiquetas"
+            ],
+            "technologies": ["React Hooks", "TypeScript", "Chakra UI", "useMemo"]
+          },
+          "SearchBar": {
+            "features": [
+              "Búsqueda en tiempo real",
+              "Sugerencias interactivas",
+              "Diseño accesible",
+              "Integración con filtros"
+            ],
+            "technologies": ["React", "TypeScript", "Chakra UI"]
+          },
+          "CategoryFilter": {
+            "features": [
+              "Selección múltiple de categorías",
+              "Diseño compacto",
+              "Sincronización con la búsqueda"
+            ],
+            "technologies": ["React", "TypeScript", "Chakra UI"]
+          }
+        },
+        "dependencies_added": [
+          "react-icons",
+          "@chakra-ui/icons",
+          "@chakra-ui/react"
+        ]
+      },
+      "vite_config": {
+        "port": 3001,
+        "host": "0.0.0.0",
+        "open": true,
+        "mode": "development",
+        "last_updated": "2025-06-30T19:00:00-04:00"
+      },
+      "authentication": {
+        "provider": "Supabase",
+        "tables": {
+          "profiles": {
+            "id": {
+              "type": "UUID",
+              "reference": "auth.users"
+            },
+            "full_name": "text",
+            "avatar_url": {
+              "type": "text",
+              "required": false
+            },
+            "role": {
+              "type": "enum",
+              "values": ["student", "teacher", "admin"]
+            }
+          }
+        },
+        "last_updated": "2025-06-30T19:00:00-04:00"
+      },
+      "environment_variables": [
+        "VITE_SUPABASE_URL",
+        "VITE_SUPABASE_ANON_KEY"
+      ],
+      "scripts": {
+        "dev": "Inicia el servidor de desarrollo",
+        "build": "Construye la aplicación para producción",
+        "preview": "Previsualiza la versión de producción"
+      },
+      "home_page": {
+        "sections": ["header_auth", "hero", "features", "video_demo", "popular_courses", "cta"],
+        "last_updated": "2025-06-29T23:54:47-04:00",
+        "header_auth": {
+          "components": [
+            {
+              "name": "Iniciar Sesión",
+              "type": "button",
+              "style": "outline",
+              "color_scheme": "blue",
+              "route": "/login"
+            },
+            {
+              "name": "Registrarse",
+              "type": "button",
+              "style": "solid",
+              "color_scheme": "blue",
+              "route": "/register"
+            }
+          ],
+          "features": ["responsive", "theme_aware", "hover_effects"]
+        },
+        "changes": [
+          "Updated hero section with embedded YouTube video",
+          "Added video demo section with YouTube integration",
+          "Improved course cards with high-quality images",
+          "Added smooth animations with Framer Motion"
+        ]
+      },
+      "media_assets": {
+        "videos": [
+          {
+            "id": "hero_video",
+            "source": "YouTube",
+            "url": "https://youtu.be/nLeCPLdeGzs",
+            "type": "embedded",
+            "autoplay": true,
+            "muted": true,
+            "loop": true
+          },
+          {
+            "id": "demo_video",
+            "source": "YouTube",
+            "url": "https://youtu.be/nLeCPLdeGzs",
+            "type": "embedded",
+            "autoplay": false
+          }
+        ],
+        "images": [
+          {
+            "id": "math_course",
+            "source": "Unsplash",
+            "url": "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d",
+            "dimensions": "1470x980"
+          },
+          {
+            "id": "python_course",
+            "source": "Unsplash",
+            "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+            "dimensions": "1470x980"
+          },
+          {
+            "id": "ai_course",
+            "source": "Pexels",
+            "url": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+            "dimensions": "1260x750"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "environment": "development",
+    "backend_status": "running",
+    "last_deployment": {
+      "date": "2025-06-28T20:05:38-04:00",
+      "process_id": "current",
+      "port": 8000,
+      "host": "0.0.0.0",
+      "python_version": "3.9.12",
+      "dependencies": {
+        "fastapi": "0.95.2",
+        "pydantic": "1.10.12",
+        "uvicorn": "0.24.0.post1",
+        "pymongo": "4.13.2",
+        "python-jose": "3.5.0",
+        "email-validator": "2.2.0"
+      }
+    }
+  },
+  "supabase": {
+    "status": "🟢 Configurado",
+    "url": "https://zddstwkylfyqwwpmidyp.supabase.co",
+    "features": [
+      "Autenticación con JWT",
+      "Almacenamiento de perfiles de usuario",
+      "Sesiones persistentes",
+      "Auto-refresco de tokens"
+    ],
+    "environment_variables": [
+      "VITE_SUPABASE_URL",
+      "VITE_SUPABASE_ANON_KEY"
+    ]
+  },
+  "database": {
+    "engine": "MongoDB",
+    "name": "gemini_educador",
+    "connection_uri": "mongodb://localhost:27017",
+    "stats": {
+      "collections_count": 6,
+      "users_count": 6,
+      "modules_count": 6,
+      "total_size_mb": 0.47,
+      "data_size_mb": 0.0,
+      "index_size_mb": 0.38,
+      "storage_size_mb": 0.09
+    },
+    "users": [
+      {
+        "username": "adminuser",
+        "email": "admin@example.com",
+        "role": "admin",
+        "age_group": "9-12",
+        "status": "active",
+        "created_at": "2025-06-29T00:23:33.845000"
+      },
+      {
+        "username": "nino2",
+        "email": "nino2@example.com",
+        "role": "child",
+        "age_group": "6-8",
+        "status": "active",
+        "created_at": "2025-06-29T00:23:09.117000"
+      },
+      {
+        "username": "nino3",
+        "email": "nino3@example.com",
+        "role": "child",
+        "age_group": "9-12",
+        "status": "active",
+        "created_at": "2025-06-29T00:23:19.466000"
+      },
+      {
+        "username": "padre1",
+        "email": "padre1@example.com",
+        "role": "parent",
+        "age_group": "9-12",
+        "status": "active",
+        "created_at": "2025-06-29T00:23:29.845000"
+      },
+      {
+        "username": "profesor1",
+        "email": "profesor1@example.com",
+        "role": "teacher",
+        "age_group": "9-12",
+        "status": "active",
+        "created_at": "2025-06-29T00:23:39.463000"
+      },
+      {
+        "username": "nino1",
+        "email": "nino1@example.com",
+        "role": "child",
+        "age_group": "3-5",
+        "status": "error",
+        "error": "Error en el registro (problema con caracteres especiales en PowerShell)"
+      }
+    ]
+  },
+  "api_endpoints": {
+    "docs_swagger": "http://127.0.0.1:8000/docs",
+    "docs_redoc": "http://127.0.0.1:8000/redoc",
+    "health_check": "http://127.0.0.1:8000/api/v1/health",
+    "base_url": "http://127.0.0.1:8000"
+  },
+  "issues_resolved": [
+    {
+      "id": "AUTH-001",
+      "title": "Error 500 al registrar nuevos usuarios",
+      "status": "resolved",
+      "date_resolved": "2025-06-28T14:58:33-04:00",
+      "description": "Error en el mapeo del campo _id entre MongoDB y Pydantic al registrar nuevos usuarios",
+      "solution": {
+        "description": "Ajuste en el manejo de ObjectId en los modelos y repositorios",
+        "files_modified": [
+          "backend/app/models/user.py",
+          "backend/app/api/v1/endpoints/auth.py",
+          "backend/app/repositories/user_repository.py"
+        ],
+        "changes_made": [
+          "Ajuste en UserResponse para manejar correctamente el alias _id",
+          "Modificación del endpoint de registro para asegurar la inclusión del campo _id",
+          "Conversión explícita de ObjectId a string en el repositorio de usuarios"
+        ]
+      },
+      "test_case": {
+        "description": "Registro exitoso de usuario de prueba",
+        "test_data": {
+          "username": "testuser145831",
+          "email": "test_145831@example.com",
+          "password": "TestPass123"
+        },
+        "expected_result": "Usuario registrado exitosamente con código 201"
+      }
+    }
+  ],
+  "git_flow": {
+    "branches": [
+      {
+        "name": "feature/nueva-funcionalidad",
+        "proposito": "Desarrollar nuevas características",
+        "origen": "develop",
+        "destino": "develop",
+        "uso": "Para agregar nuevas funcionalidades al proyecto"
+      },
+      {
+        "name": "hotfix/correccion-urgente",
+        "proposito": "Corregir errores críticos en producción",
+        "origen": "main",
+        "destino": "main y develop",
+        "uso": "Para parches urgentes que necesitan ser desplegados rápidamente"
+      },
+      {
+        "name": "release/v1.0.0",
+        "proposito": "Preparar una nueva versión para producción",
+        "origen": "develop",
+        "destino": "main y develop",
+        "uso": "Para preparar el lanzamiento de una nueva versión"
+      }
+    ]
+  },
+  "ui_updates": {
+    "title": "Cortana & Jarvi AI",
+    "slogan": "Aprende, Juega y Crece con",
+    "features": [
+      "Reproductor de YouTube integrado",
+      "Diseño responsivo",
+      "Video de presentación: https://youtu.be/nLeCPLdeGzs"
+    ]
+  },
+  "backend": {
+    "framework": "FastAPI + Uvicorn",
+    "database": "MongoDB Atlas",
+    "status": "🟢 En ejecución",
+    "features": [
+      "Autenticación JWT",
+      "API RESTful",
+      "WebSockets para chat en tiempo real",
+      "Integración con n8n",
+      "Validación de datos con Pydantic",
+      "Rate limiting",
+      "CORS configurado"
+    ],
+    "endpoints": {
+      "auth": {
+        "login": "/api/v1/auth/login",
+        "register": "/api/v1/auth/register",
+        "forgot-password": "/api/v1/auth/forgot-password",
+        "reset-password": "/api/v1/auth/reset-password"
+      },
+      "chat": {
+        "send-message": "/api/v1/chat/send",
+        "get-messages": "/api/v1/chat/messages",
+        "webhook-n8n": "/api/v1/chat/webhook/n8n"
+      }
+    },
+    "urls": {
+      "api_docs": "http://127.0.0.1:8000/docs",
+      "redoc": "http://127.0.0.1:8000/redoc",
+      "health_check": "http://127.0.0.1:8000/api/v1/health"
+    },
+    "database_info": {
+      "name": "gemini_educador",
+      "collections": ["user_progress", "modules", "test_connection", "rewards", "users", "activities"],
+      "stats": {
+        "data_size_mb": 0.0,
+        "storage_size_mb": 0.07,
+        "index_size_mb": 0.28
+      }
+    },
+    "features": [
+      "API Documentada con Swagger UI",
+      "Autenticación JWT con refresh tokens",
+      "Modelos de datos implementados",
+      "Scripts de inicialización automática",
+      "Conexión a MongoDB Atlas",
+      "Usuario administrador preconfigurado"
+    ],
+    "port": 8000,
+    "docs_url": "http://localhost:8000/docs"
+  },
+  "frontend": {
+    "framework": "React + TypeScript",
+    "ui_library": "Chakra UI",
+    "status": "🚧 En desarrollo",
+    "features": [
+      "Autenticación con Supabase",
+      "Formularios con validación",
+      "Interfaz responsive",
+      "Tema oscuro/claro",
+      "Notificaciones",
+      "Chat en tiempo real"
+    ],
+    "pages": {
+      "auth": [
+        "/login",
+        "/register",
+        "/forgot-password",
+        "/reset-password"
+      ],
+      "app": [
+        "/dashboard",
+        "/chat",
+        "/profile",
+        "/settings"
+      ]
+    },
+    "state_management": "React Context + Redux Toolkit",
+    "http_client": "Axios",
+    "integrations": [
+      {
+        "name": "Supabase",
+        "type": "Authentication",
+        "status": "✅ Implementado",
+        "features": [
+          "Autenticación de usuarios",
+          "Gestión de sesiones",
+          "Almacenamiento seguro de contraseñas"
+        ]
+      },
+      {
+        "name": "n8n",
+        "type": "Automation & Chatbot",
+        "status": "✅ Implementado",
+        "features": [
+          "Webhook para procesamiento de mensajes",
+          "Respuestas automáticas basadas en IA",
+          "Integración con servicios externos"
+        ]
+      }
+    ],
+    "port": 3000,
+    "url": "http://localhost:3000"
+  },
+  "environment_config": {
+    "mongodb": {
+      "connection_string": "mongodb://localhost:27017/",
+      "database_name": "gemini_educador"
+    },
+    "jwt": {
+      "secret_key": "tu_clave_secreta_muy_segura_aqui_123!",
+      "algorithm": "HS256",
+      "expire_minutes": 1440
+    },
+    "cors": {
+      "allowed_origins": [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000"
+      ]
+    }
+  },
+  "next_steps": [
+    "Configurar n8n localmente para el chatbot",
+    "Desarrollar módulo de Matemáticas",
+    "Implementar sistema de recompensas",
+    "Completar integración frontend-backend"
+  ],
+  "changelog": [
+    {
+      "date": "2025-06-28",
+      "changes": [
+        "Migrado a MongoDB Local",
+        "Resueltos problemas de conexión con la base de datos",
+        "Actualizada documentación de configuración"
+      ]
+    },
+    {
+      "date": "2025-06-27",
+      "changes": [
+        "Reestructuración del proyecto",
+        "Eliminada configuración de Docker",
+        "Configurado entorno de desarrollo local"
+      ]
+    }
+  ],
+  "notes": [
+    "Se eliminó la configuración de Docker en favor de un entorno de desarrollo local",
+    "El proyecto ha pasado por varias iteraciones, incluyendo un intento de migración a Node.js/Express",
+    "La documentación está siendo actualizada para reflejar los cambios recientes"
+  ]
+}

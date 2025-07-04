@@ -1,0 +1,9 @@
+{
+  "username": "profesor1",
+  "email": "profesor1@example.com",
+  "full_name": "Profesor Ejemplo",
+  "role": "teacher",
+  "age_group": "9-12",
+  "is_active": true,
+  "password": "Profesor123!!"
+}

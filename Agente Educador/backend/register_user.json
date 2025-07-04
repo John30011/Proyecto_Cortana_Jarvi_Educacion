@@ -1,0 +1,8 @@
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "Test123!",
+  "full_name": "Usuario de Prueba",
+  "age_group": "9-12",
+  "role": "child"
+}

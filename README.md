@@ -1,166 +1,171 @@
-# Proyecto_Cortana_Jarvi_Educacion
-Proyecto Educativo para [niños - Profesores - Padres]
+# GEMINI - Plataforma Educativa para Niños
 
- Información del Proyecto GEMINI
-🎯 Objetivo Principal
-GEMINI es una plataforma educativa interactiva diseñada para transformar la educación infantil mediante el uso de inteligencia artificial, ofreciendo una experiencia de aprendizaje personalizada, divertida y efectiva para niños de 3 a 12 años.
+![GEMINI Logo](assets/images/logo.svg)
 
-🎓 Propósito
-El proyecto busca cerrar la brecha educativa proporcionando acceso a recursos de aprendizaje de calidad, independientemente de la ubicación geográfica o situación socioeconómica, utilizando la tecnología para hacer el aprendizaje más accesible y atractivo.
+Plataforma educativa interactiva diseñada para niños de 3 a 12 años que combina aprendizaje con diversión mediante juegos, actividades interactivas y un asistente educativo inteligente. Proyecto piloto para evaluar la educación de los niños con apoyo de la Inteligencia Artificial a través de los agentes CORTANA & JARVI.
 
-🌟 Cualidades Principales
-1. Enfoque en el Aprendizaje Personalizado
-Adaptación del contenido al ritmo de aprendizaje individual
-Recomendaciones personalizadas basadas en el progreso
-Múltiples estilos de enseñanza para diferentes tipos de aprendices
-2. Tecnología Avanzada
-Integración con IA para tutoría personalizada
-Interfaz intuitiva y amigable para niños
-Plataforma accesible desde múltiples dispositivos
-3. Contenido Educativo de Calidad
-Módulos educativos en diversas áreas (Matemáticas, Ciencias, Programación, etc.)
-Contenido alineado con estándares educativos
-Material interactivo y atractivo visualmente
-4. Gamificación
-Sistema de recompensas y logros
-Misiones y desafíos educativos
-Retroalimentación inmediata y motivadora
-5. Seguridad y Privacidad
-Entorno seguro y supervisado
-Protección de datos de los usuarios
-Controles parentales integrados
-🛠️ Estado Actual del Proyecto (Julio 2025)
-✅ Completado
-Sistema de autenticación seguro
-Módulo de Cursos básico
-Interfaz de usuario principal
-Integración con Supabase
-🚧 En Desarrollo
-Panel de administración
-Sistema de roles y permisos
-Dashboard de análisis
-Contenido educativo avanzado
-🌍 Impacto Esperado
-Mejorar los resultados de aprendizaje en niños
-Reducir la brecha educativa
-Fomentar el amor por el aprendizaje
-Proporcionar herramientas valiosas para educadores y padres
-📈 Próximos Pasos
-Completar el panel de administración
-Implementar el sistema de roles
-Expandir la biblioteca de contenido
-Mejorar las capacidades de análisis
+## 📌 Estado Actual del Proyecto (04 de Julio de 2025 - Tarde)
 
-## Informacion mas Profunda sobre el Desarrollo del Software:
+### 🚀 Progreso General
+- **Frontend**: 70% completado
+- **Backend**: 60% completado
+- **Base de Datos**: 50% completado
+- **Pruebas**: 40% completado
 
- Análisis Profundo del Proyecto GEMINI
-🔍 Arquitectura Técnica
-Frontend
-Tecnologías Principales:
-React 18 con TypeScript
-Vite como bundler
-Chakra UI para componentes de interfaz
-React Router para navegación
-React Query para gestión de estado del servidor
-Backend
-Stack Técnico:
-FastAPI (Python) para la API REST
-Supabase para autenticación y base de datos
-MongoDB para almacenamiento de datos educativos
-Redis para caché (en implementación)
-IA y Aprendizaje Automático
-Modelos de procesamiento de lenguaje natural
-Sistema de recomendación de contenido
-Análisis de progreso predictivo
-📚 Módulos Educativos Detallados
-1. Matemáticas (3-12 años)
-Conceptos Básicos (3-5 años)
-Números y conteo
-Formas y patrones
-Medidas simples
-Operaciones Fundamentales (6-8 años)
-Suma y resta
-Multiplicación básica
-Fracciones simples
-Conceptos Avanzados (9-12 años)
-Geometría
-Álgebra básica
-Resolución de problemas
-2. Programación (6-12 años)
-Pensamiento Computacional (6-8 años)
-Secuencias lógicas
-Resolución de problemas
-Programación por bloques
-Python Básico (9-12 años)
-Variables y tipos de datos
-Estructuras de control
-Funciones básicas
-3. Ciencias (6-12 años)
-Ciencias Naturales
-El cuerpo humano
-Ecosistemas
-Experimentos virtuales
-Tecnología
-Robótica básica
-Electrónica simple
-Conceptos de IA
-🎮 Sistema de Gamificación
-Mecánicas Implementadas
-Sistema de Niveles
-Experiencia (XP) por actividades completadas
-Desbloqueo de nuevos contenidos
-Insignias por logros
-Retos Diarios/Semanales
-Actividades especiales
-Recompensas incrementales
-Clasificaciones amigables
-Sistema de Recompensas
-Monedas virtuales
-Personalización de avatar
-Certificados digitales
-Desbloqueo de contenido premium
-🔒 Seguridad y Privacidad
-Medidas Implementadas
-Autenticación de dos factores
-Cifrado de extremo a extremo
-Cumplimiento COPPA (Ley de Protección de la Privacidad Infantil en Internet)
-Controles parentales configurables
-Protección de Datos
-Almacenamiento seguro de información
-Política de privacidad clara
-Controles de consentimiento
-Eliminación de datos bajo petición
-📊 Análisis y Reportes
-Para Estudiantes
-Progreso detallado
-Fortalezas y áreas de mejora
-Recomendaciones personalizadas
-Historial de actividades
-Para Padres/Educadores
-Panel de control detallado
-Informes de progreso
-Alertas personalizables
-Comparativas con estándares
-🚀 Hoja de Ruta Futura
-Próximos 3 Meses
-Fase de Beta Cerrada
-Pruebas con grupos focales
-Retroalimentación de usuarios
-Optimización de rendimiento
-Nuevas Características
-Aula virtual en tiempo real
-Herramientas de colaboración
-Biblioteca de recursos ampliada
-Expansión de Contenido
-Nuevas materias
-Más niveles de dificultad
-Contenido multilingüe
-A Largo Plazo
-Integración con sistemas escolares
-Realidad aumentada para aprendizaje inmersivo
-Asistente de IA más avanzado
-Comunidad educativa global
+### ✅ Últimas Actualizaciones (04 de Julio de 2025 - Tarde)
+- Integración completa del módulo de Cursos con el Dashboard
+- Sistema de visualización de actividades educativas
+- Componentes reutilizables optimizados
+- Mejoras en el rendimiento de autenticación
 
+### 📅 Próximos Pasos
+1. Completar panel de administración
+2. Implementar sistema de roles y permisos
+3. Desarrollar dashboard de análisis
+4. Mejorar accesibilidad (a11y)
 
+---
+
+## 📌 Actualización: 04 de Julio de 2025 (Tarde)
+
+### Integración de Módulo de Cursos y Dashboard
+
+¡Hemos completado la integración del módulo de Cursos con el Dashboard! 🎉
+
+**Nuevas características implementadas:**
+- Visualización unificada de actividades educativas y cursos
+- Sistema de búsqueda y filtrado por categorías
+- Componentes reutilizables: `ActivityCard` y `ActivityCourseCard`
+- Mejoras en el rendimiento con React Hooks
+
+**Mejoras técnicas:**
+- Corrección de errores de Hooks de React
+- Implementación de tipos estrictos en TypeScript
+- Optimización de rendimiento con `useMemo`
+
+---
+
+## 📌 Actualización: 04 de Julio de 2025 (Mañana)
+
+### Configuración Exitosa de Supabase y Autenticación
+
+¡Hemos completado exitosamente la configuración de Supabase y el sistema de autenticación en el frontend! 🎉
+
+**Cambios realizados:**
+- Configuración robusta del cliente de Supabase
+- Corrección de rutas de importación
+- Implementación de tipos TypeScript
+- Documentación detallada
+
+**Próximos pasos:**
+- Protección de rutas
+- Pruebas adicionales
+- Despliegue en producción
+
+---
+
+## 🚀 Características Principales
+
+- **Módulos Educativos**: Contenido adaptado por edades (3-5, 6-8, 9-12 años)
+- **Chatbot Interactivo**: Asistente educativo con IA para aprendizaje personalizado
+- **Sistema de Recompensas**: Logros y stickers para motivar el aprendizaje
+- **Interfaz Amigable**: Diseño intuitivo y colorido para niños
+- **Seguridad Infantil**: Contenido supervisado y entorno seguro
+- **Múltiples Materias**: Matemáticas, Ciencia, Historia y más
+- **Seguro para Niños**: Contenido apropiado por edades
+- **Panel para Padres**: Seguimiento del progreso
+
+## 🛠️ Tecnologías
+
+- **Frontend**: React, Vite, Tailwind CSS, Framer Motion
+- **Backend**: FastAPI (Python)
+- **Base de Datos**: MongoDB
+- **IA**: Integración con modelos de lenguaje
+- **Autenticación**: JWT
+
+## 🚀 Empezando
+
+### Requisitos Previos
+
+- Node.js 16+
+- Python 3.9+
+- MongoDB
+
+### Instalación
+
+1. Clonar el repositorio
+   ```bash
+   git clone https://github.com/John30011/Educacion_Con_IA.git
+   cd Agente-Educador
+   ```
+
+2. Configurar el Frontend
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+3. Configurar el Backend
+   ```bash
+   cd ../backend
+   python -m venv venv
+   .\venv\Scripts\activate  # En Windows
+   pip install -r requirements.txt
+   ```
+
+4. Configurar variables de entorno
+   Crear un archivo `.env` en la carpeta backend con:
+   ```
+   MONGODB_URI=mongodb://localhost:27017/gemini
+   SECRET_KEY=tu_clave_secreta_aqui
+   ```
+
+### Ejecución
+
+1. Iniciar el backend
+   ```bash
+   cd backend
+   uvicorn main:app --reload
+   ```
+
+2. En otra terminal, iniciar el frontend
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+
+3. Abrir en el navegador
+   ```
+   http://localhost:3000
+   ```
+
+## 📚 Documentación de la API
+
+La documentación de la API estará disponible en:
+- Swagger UI: `http://localhost:8000/docs`
+- ReDoc: `http://localhost:8000/redoc`
+
+## 🤝 Contribución
+
+1. Hacer fork del proyecto
+2. Crear una rama (`git checkout -b feature/nueva-funcionalidad`)
+3. Hacer commit de los cambios (`git commit -am 'Añadir nueva funcionalidad'`)
+4. Hacer push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abrir un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## ✉️ Contacto
+
+[Tu Nombre] - [tu@email.com]
 
 
+## Historial de Desarrollo
+
+### jueves, 3 de julio de 2025
+
+**Módulo de Registro de Usuarios - Conexión con Supabase**
+
+Se ha resuelto el problema de registro de usuarios. El módulo de registro de usuarios ahora tiene conexión con Supabase y puede crear cuentas.

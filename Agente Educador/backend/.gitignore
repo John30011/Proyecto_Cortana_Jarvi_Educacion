@@ -1,0 +1,96 @@
+# Entornos virtuales
+venv/
+env/
+.venv/
+ENV/
+
+# Archivos de entorno
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Archivos de desarrollo
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*~
+
+# Archivos de base de datos local
+*.sqlite3
+*.db
+
+# Archivos de caché
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# Archivos de cobertura
+htmlcov/
+.coverage
+.coverage.*
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de Poetry
+poetry.lock
+
+# Archivos de entorno de desarrollo
+.venv/
+.env
+
+# Archivos de PyCharm
+.idea/
+
+# Archivos de VSCode
+.vscode/
+
+# Archivos de Jupyter Notebook
+.ipynb_checkpoints
+
+# Archivos de Python
+*.pyc
+__pycache__/
+
+# Archivos de Uvicorn
+uvicorn.log
+
+# Archivos de base de datos
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal

@@ -1,0 +1,82 @@
+"""
+Configuración de la aplicación GEMINI.
+
+Este módulo carga y valida las variables de entorno necesarias para la aplicación.
+"""
+import os
+from pathlib import Path
+from typing import List, Literal, Union
+
+from pydantic import AnyHttpUrl, validator
+from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde .env
+env_path = Path(".") / ".env"
+load_dotenv(dotenv_path=env_path)
+
+# Alias para tipo de nivel de log
+LogLevel = Literal["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
+
+class Settings(BaseSettings):
+    # Configuración de la aplicación
+    APP_NAME: str = "GEMINI Backend"
+    APP_ENV: str = os.getenv("APP_ENV", "development")
+    DEBUG: bool = os.getenv("DEBUG", "False").lower() in ("true", "1", "t")
+    
+    # Configuración de logging
+    LOG_LEVEL: LogLevel = os.getenv("LOG_LEVEL", "INFO").upper()
+    LOG_FORMAT: str = os.getenv(
+        "LOG_FORMAT", 
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    )
+    LOG_FILE: str = os.getenv("LOG_FILE", "logs/app.log")
+    
+    # Configuración de la API
+    API_V1_STR: str = "/api/v1"
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "your-secret-key-here")
+    ALGORITHM: str = os.getenv("ALGORITHM", "HS256")
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "1440"))  # 24 horas
+    
+    # Configuración de CORS
+    BACKEND_CORS_ORIGINS: List[Union[str, AnyHttpUrl]] = [
+        "http://localhost:3000",
+        "http://localhost:8000",
+    ]
+    
+    # Configuración de MongoDB
+    MONGODB_URL: str = os.getenv("MONGODB_URL", "mongodb://localhost:27017")
+    DB_NAME: str = os.getenv("DB_NAME", "gemini_educacion")
+    
+    # Configuración del servidor
+    HOST: str = os.getenv("HOST", "0.0.0.0")
+    PORT: int = int(os.getenv("PORT", "8000"))
+    
+    # Configuración de límite de tasa (rate limiting)
+    RATE_LIMIT_REQUESTS: int = int(os.getenv("RATE_LIMIT_REQUESTS", "100"))  # Número de peticiones
+    RATE_LIMIT_WINDOW: int = int(os.getenv("RATE_LIMIT_WINDOW", "60"))  # Ventana de tiempo en segundos
+    
+    # Validación de LOG_LEVEL
+    @validator('LOG_LEVEL')
+    @classmethod
+    def validate_log_level(cls, v: str) -> str:
+        valid_levels = ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
+        if v not in valid_levels:
+            raise ValueError(f"Nivel de log inválido. Debe ser uno de: {', '.join(valid_levels)}")
+        return v
+    
+    # Validación de CORS
+    @validator("BACKEND_CORS_ORIGINS", pre=True)
+    @classmethod
+    def assemble_cors_origins(cls, v: Union[str, List[str]]) -> List[str]:
+        if isinstance(v, str) and not v.startswith("["):
+            return [i.strip() for i in v.split(",")]
+        elif isinstance(v, (list, str)):
+            return v
+        raise ValueError(v)
+    
+    class Config:
+        case_sensitive = True
+
+# Instancia de configuración
+settings = Settings()
