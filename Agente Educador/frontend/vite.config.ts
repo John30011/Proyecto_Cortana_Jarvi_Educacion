@@ -9,6 +9,13 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+      '@components': resolve(__dirname, './src/components'),
+      '@pages': resolve(__dirname, './src/pages')
+    }
+  },
   server: {
     port: 3001,
     strictPort: true,
@@ -53,12 +60,5 @@ export default defineConfig({
         }
       }
     })
-  ],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './src'),
-      '@components': resolve(__dirname, './src/components'),
-      '@pages': resolve(__dirname, './src/pages'),
-    }
-  }
+  ]
 });

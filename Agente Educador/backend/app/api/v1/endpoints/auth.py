@@ -20,9 +20,10 @@ from app.core.auth import (
     create_tokens,
     refresh_access_token
 )
-from app.models.user import UserResponse, Token, User, UserCreate
-from app.repositories.user_repository import UserRepository, get_user_repository
-from app.repositories.token_repository import TokenRepository, get_token_repository
+from ..models.user import UserResponse, UserCreate, User
+from ..models.token import Token
+from ..repositories.user_repository import UserRepository, get_user_repository
+from ..repositories.token_repository import TokenRepository, get_token_repository
 from config import settings
 
 logger = logging.getLogger(__name__)

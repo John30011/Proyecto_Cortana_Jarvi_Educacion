@@ -11,8 +11,11 @@ from app.models.token import TokenBlacklistInDB, TokenBlacklistCreate, Token
 from app.models.user import User
 from config import get_settings
 from app.core.security import create_access_token
+from app.db.mongodb import db
 
 settings = get_settings()
+
+
 
 class TokenRepository:
     """Clase para manejar operaciones de tokens en la base de datos"""
@@ -24,15 +27,6 @@ class TokenRepository:
     async def create(cls, collection):
         """Crea una nueva instancia del repositorio de tokens"""
         return cls(collection)
-
-
-# Función para inyección de dependencias
-async def get_token_repository() -> TokenRepository:
-    """Obtiene una instancia del repositorio de tokens para inyección de dependencias"""
-    from app.db.mongodb import db
-    await db.connect_db()
-    collection = await db.get_collection(settings.MONGO_TOKENS_COLLECTION)
-    return await TokenRepository.create(collection)
 
     @classmethod
     async def create_indexes(cls, db):
@@ -97,8 +91,8 @@ async def get_token_repository() -> TokenRepository:
         return token_data is not None
     
     async def revoke_all_user_tokens(
-        self, 
-        user_id: str, 
+        self,
+        user_id: str,
         reason: str = "logout_all"
     ) -> int:
         """
@@ -173,3 +167,9 @@ async def get_token_repository() -> TokenRepository:
             expires_in=expires_in,
             user=user.dict()
         )
+
+# Función para inyección de dependencias
+async def get_token_repository() -> TokenRepository:
+    """Obtiene una instancia del repositorio de tokens para inyección de dependencias"""
+    collection = await db.get_collection(settings.MONGO_TOKENS_COLLECTION)
+    return await TokenRepository.create(collection)

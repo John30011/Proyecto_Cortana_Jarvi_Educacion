@@ -1,0 +1,123 @@
+Excelente sugerencia! Vamos a implementar un flujo de trabajo más organizado siguiendo Git Flow, donde cada característica o corrección se desarrolle en una rama separada. Aquí está el plan:
+
+Estructura de ramas:
+main - Versión de producción estable
+develop - Integración de características
+feature/* - Nuevas características
+bugfix/* - Corrección de errores
+release/* - Preparación de versiones
+
+# Crea una rama para la nueva característica
+git checkout develop
+git pull origin develop
+git checkout -b feature/nombre-de-la-caracteristica
+
+
+
+Perfecto! Hemos configurado correctamente la estructura de ramas en tu repositorio. Aquí tienes un resumen de lo que hemos hecho:
+
+Ramas principales:
+main: Rama de producción estable
+develop: Rama de integración de características
+Ramas de soporte (que puedes crear según sea necesario):
+feature/*: Para nuevas características
+bugfix/*: Para corrección de errores
+release/*: Para preparación de versiones
+Configuración del repositorio remoto:
+El repositorio remoto está configurado en: https://github.com/John30011/Educacion_Con_IA.git
+Las ramas main y develop están configuradas para hacer seguimiento de sus contrapartes remotas
+Cómo trabajar con este flujo:
+Para nuevas características:
+bash
+
+1.- Para nuevas Característica
+
+git checkout develop
+git checkout -b feature/nombre-de-la-caracteristica
+# Haz tus cambios
+git add .
+git commit -m "Añadir característica X"
+git push -u origin feature/nombre-de-la-caracteristica
+
+2.-Para corregir Errores:
+
+git checkout develop
+git checkout -b bugfix/descripcion-del-error
+# Haz tus correcciones
+git add .
+git commit -m "Corregir error en [descripción]"
+git push -u origin bugfix/descripcion-del-error
+
+
+Imporetante: 
+
+Recomendaciones adicionales:
+Siempre haz pull antes de empezar a trabajar: git pull origin develop
+Usa git status frecuentemente para ver el estado de tus cambios.
+Mantén tus commits atómicos y bien documentados.
+¿Necesitas ayuda con algo más relacionado con el flujo de trabajo o la gestión de ramas?
+
+Feedback submitted
+
+
+
+3.-Para preparar nueva versiones:
+
+git checkout develop
+git checkout -b release/v1.0.0
+# Actualiza versiones, changelog, etc.
+git add .
+git commit -m "Preparar versión 1.0.0"
+git push -u origin release/v1.0.0
+
+4.- Para desplegar a producción:
+
+git checkout main
+git merge --no-ff release/v1.0.0
+git tag -a v1.0.0 -m "Versión 1.0.0"
+git push origin main --tags
+
+
+En Git, se pueden trabajar con varios tipos de ramas, siendo las más comunes: main (o master), develop y ramas de soporte como feature, release y hotfix. Las ramas main y develop son las principales, mientras que las de soporte se utilizan para diferentes propósitos de desarrollo. 
+Ramas principales:
+main (o master):
+Esta rama representa la versión estable del código, típicamente la que está en producción.
+develop:
+Esta rama sirve como rama de integración para las nuevas funcionalidades y cambios que se están desarrollando. 
+Ramas de soporte:
+feature:
+Se utilizan para desarrollar nuevas funcionalidades. Los desarrolladores crean ramas de este tipo para trabajar en nuevas características de forma aislada.
+release:
+Se crean a partir de develop para preparar una nueva versión del software, permitiendo pruebas y ajustes finales antes de la publicación.
+hotfix:
+Se utilizan para corregir errores críticos en la rama main (o master) de forma rápida y eficiente. 
+Además de estas, pueden existir otras ramas específicas según las necesidades del proyecto y el flujo de trabajo adoptado. 
+
+
+----------------------
+endpind   Usando la Documentación Swagger UI
+----------------------
+
+3. Usando la Documentación Swagger UI
+Abre tu navegador y ve a: http://localhost:8000/docs
+Busca la sección "auth"
+Expande el endpoint POST /api/v1/auth/register
+Haz clic en "Try it out"
+Modifica los valores del JSON según necesites
+Haz clic en "Execute"
+4. Usando Python (si tienes Python instalado)
+Crea un archivo 
+test_register.py
+ con:
+
+
+http://localhost:3001/app/dashboard
+
+Panel de administración
+Sistema de lecciones interactivas
+Evaluaciones y seguimiento de progreso
+Integración con más servicios educativos
+¿En qué aspecto específico del proyecto te gustaría que nos enfoquemos a continuación?
+
+
+npx vite --port 3001 --host 0.0.0.0

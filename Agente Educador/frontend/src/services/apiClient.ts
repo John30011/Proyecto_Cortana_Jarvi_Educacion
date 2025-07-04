@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
-import { API_ERRORS, ApiResponse, RequestConfig } from '@/config/api';
+import { API_ERRORS, ApiResponse, RequestConfig } from '../config/api';
 
 // Interfaz para el perfil del usuario    
 interface UserProfile {

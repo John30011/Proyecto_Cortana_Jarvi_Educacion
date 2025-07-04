@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import Register from '../Register';
-import { AuthProvider } from '@/contexts/AuthContext-1';
+import { AuthProvider } from '../../contexts/AuthContext';
 
 // Mock de Supabase
 jest.mock('@/lib/supabase', () => ({

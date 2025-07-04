@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, VStack, Text, Code, Box, useToast, Spinner } from '@chakra-ui/react';
-import { testSupabaseConnection } from '@/utils/testSupabaseConnection';
+import { testSupabaseConnection } from '../utils/testSupabaseConnection';
 
 const SupabaseTest = () => {
   const [isTesting, setIsTesting] = useState(false);

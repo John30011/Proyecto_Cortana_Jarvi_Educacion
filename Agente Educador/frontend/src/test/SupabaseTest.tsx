@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, VStack, Text, Box, useToast, Input, FormControl, FormLabel, Code, Textarea, HStack, Badge } from '@chakra-ui/react';
-import { supabase } from '@/utils/supabase';
+import { supabase } from '../utils/supabase';
 
 type UserProfile = {
   id: string;

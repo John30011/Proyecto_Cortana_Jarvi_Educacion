@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import MainLayout from '@/components/layout/MainLayout';
-import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import MainLayout from '../components/layout/MainLayout';
+import LoadingSpinner from '../components/ui/LoadingSpinner';
 
 // Lazy load pages
 const Home = lazy(() => import('@/pages/Home'));
