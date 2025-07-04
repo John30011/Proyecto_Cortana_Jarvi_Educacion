@@ -1,6 +1,6 @@
 import { Box, SimpleGrid, Heading, Text, Card, CardHeader, CardBody, CardFooter, Button, VStack, HStack, Icon, useColorModeValue } from '@chakra-ui/react';
 import { FaBookOpen, FaGraduationCap, FaChartLine, FaUsers, FaSignOutAlt } from 'react-icons/fa';
-import { useAuth } from '@/contexts/AuthContext-1';
+import { useAuth } from '../contexts/AuthContext';
 
 const Dashboard = () => {
   const { user, logout } = useAuth();

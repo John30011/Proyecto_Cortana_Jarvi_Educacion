@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Heading, Text, VStack, Button, useColorModeValue, HStack, Badge, Flex, SimpleGrid } from '@chakra-ui/react';
 import { FaUserAstronaut, FaGraduationCap } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import ActivitiesGrid from '@/components/dashboard/ActivitiesGrid';
+import ActivitiesGrid from '../../../components/dashboard/ActivitiesGrid';
 
 // Componentes de animación
 const MotionBox = motion(Box);

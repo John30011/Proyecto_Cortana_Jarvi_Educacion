@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { supabase } from '@/utils/supabase';
+import { supabase } from '../utils/supabase';
 import { User as SupabaseUser, UserMetadata, Session } from '@supabase/supabase-js';
-import { UserRole } from '@/types/database.types';
+import { UserRole } from '../types/database.types';
 
 // Define types
 type User = SupabaseUser & {

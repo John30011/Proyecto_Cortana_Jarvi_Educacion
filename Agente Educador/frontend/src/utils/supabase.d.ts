@@ -1,6 +1,12 @@
 import { SupabaseClient, Session } from '@supabase/supabase-js';
 
-declare module '@/utils/supabase' {
-  export const supabase: SupabaseClient;
-  export type { Session };
+declare global {
+  interface Window {
+    supabase: SupabaseClient;
+  }
 }
+
+declare const supabase: SupabaseClient;
+
+export { supabase };
+export type { Session };

@@ -1,24 +1,11 @@
 """
 Modelos de Usuario y autenticación para la API
 """
-from typing import Optional, ForwardRef, Any, Dict
+from typing import Optional, Any, Dict
 from datetime import datetime
 from bson import ObjectId
 from pydantic import BaseModel, EmailStr, Field, validator
 from enum import Enum
-
-# Forward reference para UserResponse
-UserResponse = ForwardRef('UserResponse')
-
-class Token(BaseModel):
-    """Modelo para el token de acceso"""
-    access_token: str
-    token_type: str
-    user: UserResponse
-
-class TokenData(BaseModel):
-    """Datos del token"""
-    username: Optional[str] = None
 
 class UserRole(str, Enum):
     """Roles de usuario disponibles"""
@@ -44,7 +31,7 @@ class UserBase(BaseModel):
     avatar: Optional[str] = None
     
     @validator('username')
-    def username_must_be_alphanumeric(cls, v):
+    def username_must_be_alphanumeric(cls, v: str) -> str:
         if not v.isalnum():
             raise ValueError('El nombre de usuario solo puede contener letras y números')
         return v.lower()
@@ -54,11 +41,12 @@ class UserCreate(UserBase):
     password: str = Field(..., min_length=8)
     
     @validator('password')
-    def password_strength(cls, v):
+    def password_strength(cls, v: str) -> str:
         if len(v) < 8:
             raise ValueError('La contraseña debe tener al menos 8 caracteres')
         if not any(char.isdigit() for char in v):
             raise ValueError('La contraseña debe contener al menos un número')
+            
         if not any(char.isalpha() for char in v):
             raise ValueError('La contraseña debe contener al menos una letra')
         return v
@@ -92,7 +80,7 @@ class UserInDB(UserBase):
             }
         }
         
-    def dict(self, *args, **kwargs):
+    def dict(self, *args: Any, **kwargs: Any) -> Dict[str, Any]:
         """Sobrescribe el método dict para manejar correctamente la serialización"""
         result = super().dict(*args, **kwargs)
         # Asegurarse de que los campos de fecha se conviertan a string
@@ -104,6 +92,37 @@ class UserInDB(UserBase):
         if "_id" in result and result["_id"] is None:
             result.pop("_id")
         return result
+
+class UserUpdate(BaseModel):
+    """Modelo para actualizar usuarios"""
+    email: Optional[EmailStr] = None
+    full_name: Optional[str] = None
+    age_group: Optional[AgeGroup] = None
+    avatar: Optional[str] = None
+    is_active: Optional[bool] = None
+    password: Optional[str] = None
+    
+    @validator('password')
+    def password_strength(cls, v: Optional[str]) -> Optional[str]:
+        if v is not None:
+            if len(v) < 8:
+                raise ValueError('La contraseña debe tener al menos 8 caracteres')
+            if not any(char.isdigit() for char in v):
+                raise ValueError('La contraseña debe contener al menos un número')
+            if not any(char.isalpha() for char in v):
+                raise ValueError('La contraseña debe contener al menos una letra')
+        return v
+
+# Modelo para el usuario en la autenticación
+class User(UserBase):
+    """Modelo para el usuario en la autenticación"""
+    id: str = Field(..., alias="_id")
+    
+    class Config:
+        allow_population_by_field_name = True
+        json_encoders = {
+            datetime: lambda v: v.isoformat()
+        }
 
 class UserResponse(UserBase):
     """Modelo para la respuesta de la API"""
@@ -132,37 +151,6 @@ class UserResponse(UserBase):
             }
         }
 
-class UserUpdate(BaseModel):
-    """Modelo para actualizar usuarios"""
-    email: Optional[EmailStr] = None
-    full_name: Optional[str] = None
-    age_group: Optional[AgeGroup] = None
-    avatar: Optional[str] = None
-    is_active: Optional[bool] = None
-    password: Optional[str] = None
-    
-    @validator('password')
-    def password_strength(cls, v):
-        if v is not None:
-            if len(v) < 8:
-                raise ValueError('La contraseña debe tener al menos 8 caracteres')
-            if not any(char.isdigit() for char in v):
-                raise ValueError('La contraseña debe contener al menos un número')
-            if not any(char.isalpha() for char in v):
-                raise ValueError('La contraseña debe contener al menos una letra')
-        return v
-
-# Modelo para el usuario en la autenticación
-class User(UserBase):
-    """Modelo para el usuario en la autenticación"""
-    id: str = Field(..., alias="_id")
-    
-    class Config:
-        allow_population_by_field_name = True
-        json_encoders = {
-            datetime: lambda v: v.isoformat()
-        }
-
 # Actualizar referencias circulares
-UserResponse.update_forward_refs()
-Token.update_forward_refs()
+# Token.update_forward_refs()
+

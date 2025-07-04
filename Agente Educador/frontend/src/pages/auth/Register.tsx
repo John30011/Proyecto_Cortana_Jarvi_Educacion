@@ -18,8 +18,8 @@ import {
   Checkbox
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { useAuth } from '@/contexts/AuthContext';
-import { UserRole } from '@/types/database.types';
+import { useAuth } from '../../contexts/AuthContext';
+import { UserRole } from '../../types/database.types';
 
 const Register = () => {
   const [formData, setFormData] = useState({

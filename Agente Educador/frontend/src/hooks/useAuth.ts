@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
 import { api } from '@/services/apiClient';
 import { API_ERRORS } from '@/config/api';
-import { logError } from '@/utils/logger';
+import { logError } from '../utils/logger';
 
 export type AgeGroup = '3-5' | '6-8' | '9-12';
 

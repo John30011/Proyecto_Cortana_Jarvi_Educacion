@@ -29,16 +29,16 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Importación dinámica corregida para React/Vite
-const LetterRain = lazy(() => import('@/components/effects/LetterRain'));
+const LetterRain = lazy(() => import('../components/effects/LetterRain'));
 
 import { ViewIcon, ViewOffIcon, ChevronDownIcon, ChevronUpIcon, AddIcon, CloseIcon } from '@chakra-ui/icons';
 import { FaUser, FaEnvelope, FaLock, FaUserGraduate, FaChalkboardTeacher, FaIdCard, FaUserFriends } from 'react-icons/fa';
 import { InputLeftElement } from '@chakra-ui/react';
-import { UserRole } from '@/types/database.types';
+import { UserRole } from '../types/database.types';
 
 interface FormData {
   name: string;

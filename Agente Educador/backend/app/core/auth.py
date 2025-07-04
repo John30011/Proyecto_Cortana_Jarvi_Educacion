@@ -11,7 +11,9 @@ from pydantic import ValidationError
 from passlib.context import CryptContext
 import uuid
 
-from app.models.user import User, TokenData, UserInDB
+from app.models.user import User, UserInDB
+from app.models.token import TokenData
+from app.repositories.user_repository import UserRepository
 from app.repositories.user_repository import UserRepository
 from app.repositories.token_repository import TokenRepository
 from config import settings
@@ -136,8 +138,8 @@ async def create_tokens(
     
     # Convertir el usuario a diccionario y asegurarse de que _id esté presente
     user_dict = user.dict(by_alias=True)
-    if '_id' not in user_dict and hasattr(user, 'id'):
-        user_dict['_id'] = str(user.id)
+    if 'id' in user_dict and '_id' not in user_dict:
+        user_dict['_id'] = user_dict['id']
     
     # Asegurarse de que los campos requeridos estén presentes
     if 'created_at' not in user_dict:
@@ -202,7 +204,8 @@ async def refresh_access_token(
             raise credentials_exception
             
         # Crear nuevo token de acceso
-        return await create_tokens(user)
+        user_for_token = User(**user.dict())
+        return await create_tokens(user_for_token)
         
     except JWTError:
         raise credentials_exception
@@ -232,8 +235,6 @@ async def get_current_user(
     )
     
     try:
-        # Verificar el token
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         # Decodificar el token JWT
         payload = jwt.decode(
             token, 
@@ -250,7 +251,6 @@ async def get_current_user(
         token_data = TokenData(username=username)
         
         # Obtener el usuario de la base de datos
-        from app.repositories.user_repository import UserRepository
         user = await UserRepository.get_user_by_username(username=token_data.username)
         
         if user is None:

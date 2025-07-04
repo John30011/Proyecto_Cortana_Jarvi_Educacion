@@ -1,15 +1,16 @@
 {
   "project_name": "GEMINI",
   "current_status": {
-    "last_updated": "2025-07-02T20:30:00-04:00",
-    "version": "1.1.1",
+    "last_updated": "2025-07-04T13:20:00-04:00",
+    "version": "1.1.2",
     "release_notes": [
       "Configuración de Supabase para autenticación",
       "Resolución de conflictos de dependencias con --legacy-peer-deps",
       "Implementación completa del módulo de autenticación",
       "Mejoras en la interfaz de usuario",
       "Integración con n8n para el chatbot",
-      "Mejoras de seguridad y rendimiento"
+      "Mejoras de seguridad y rendimiento",
+      "Correcciones de errores de tipado en el backend (mypy)"
     ],
     "security_updates": {
       "csp_configuration": {
@@ -321,170 +322,80 @@
         },
         "expected_result": "Usuario registrado exitosamente con código 201"
       }
+    },
+    {
+      "id": "FRONTEND-CHAT-001",
+      "title": "Errores de tipado y funcionalidad en Chatbot.tsx",
+      "status": "resolved",
+      "date_resolved": "2025-07-04T13:20:00-04:00",
+      "description": "Múltiples errores de tipado, importación y lógica en el componente Chatbot del frontend.",
+      "solution": {
+        "description": "Corrección de importaciones de íconos, eliminación de código duplicado, ajuste de lógica de envío de mensajes, corrección de tipos en la interfaz Message, y mejoras generales en la estructura del componente.",
+        "files_modified": [
+          "frontend/src/components/chat/Chatbot.tsx"
+        ]
+      }
+    },
+    {
+      "id": "BACKEND-MYPY-001",
+      "title": "Errores de tipado en el backend (mypy)",
+      "status": "partially_resolved",
+      "date_resolved": "2025-07-04T13:20:00-04:00",
+      "description": "Numerosos errores de tipado reportados por mypy en varios archivos del backend.",
+      "solution": {
+        "description": "Instalación de stubs de librerías (types-python-jose, types-passlib), corrección de indentación en token_repository.py, eliminación de definición duplicada de UserResponse y corrección de anotaciones de tipo en app/models/user.py, corrección de importaciones y lógica en app/core/auth.py, y configuración de mypy en pyproject.toml.",
+        "files_modified": [
+          "backend/app/repositories/token_repository.py",
+          "backend/app/models/user.py",
+          "backend/app/core/auth.py",
+          "backend/app/api/v1/endpoints/auth.py",
+          "backend/pyproject.toml"
+        ]
+      }
     }
   ],
-  "git_flow": {
-    "branches": [
-      {
-        "name": "feature/nueva-funcionalidad",
-        "proposito": "Desarrollar nuevas características",
-        "origen": "develop",
-        "destino": "develop",
-        "uso": "Para agregar nuevas funcionalidades al proyecto"
-      },
-      {
-        "name": "hotfix/correccion-urgente",
-        "proposito": "Corregir errores críticos en producción",
-        "origen": "main",
-        "destino": "main y develop",
-        "uso": "Para parches urgentes que necesitan ser desplegados rápidamente"
-      },
-      {
-        "name": "release/v1.0.0",
-        "proposito": "Preparar una nueva versión para producción",
-        "origen": "develop",
-        "destino": "main y develop",
-        "uso": "Para preparar el lanzamiento de una nueva versión"
-      }
-    ]
-  },
-  "ui_updates": {
-    "title": "Cortana & Jarvi AI",
-    "slogan": "Aprende, Juega y Crece con",
-    "features": [
-      "Reproductor de YouTube integrado",
-      "Diseño responsivo",
-      "Video de presentación: https://youtu.be/nLeCPLdeGzs"
-    ]
-  },
-  "backend": {
-    "framework": "FastAPI + Uvicorn",
-    "database": "MongoDB Atlas",
-    "status": "🟢 En ejecución",
-    "features": [
-      "Autenticación JWT",
-      "API RESTful",
-      "WebSockets para chat en tiempo real",
-      "Integración con n8n",
-      "Validación de datos con Pydantic",
-      "Rate limiting",
-      "CORS configurado"
-    ],
-    "endpoints": {
-      "auth": {
-        "login": "/api/v1/auth/login",
-        "register": "/api/v1/auth/register",
-        "forgot-password": "/api/v1/auth/forgot-password",
-        "reset-password": "/api/v1/auth/reset-password"
-      },
-      "chat": {
-        "send-message": "/api/v1/chat/send",
-        "get-messages": "/api/v1/chat/messages",
-        "webhook-n8n": "/api/v1/chat/webhook/n8n"
-      }
+  "pending_issues": [
+    {
+      "category": "Backend - Mypy",
+      "description": "Falta de anotaciones de tipo (`no-untyped-def`) en numerosas funciones en varios archivos (ej. `update_env.py`, `setup_mongodb.py`, `run_server.py`, `test_register.py`, `app/models/token.py`, `app/models/chat_models.py`, `app/db/mongodb.py`, `app/services/chat_service.py`, `app/repositories/user_repository.py`, `app/repositories/token_repository.py`, `app/db/init_db.py`, `app/api/dependencies/rate_limiter.py`, `app/api/dependencies/auth.py`, `app/api/v1/endpoints/users.py`, `main.py`, `app/main.py`, `list_routes.py`, `tests/test_users.py`, `tests/test_auth_flow.py`)."
     },
-    "urls": {
-      "api_docs": "http://127.0.0.1:8000/docs",
-      "redoc": "http://127.0.0.1:8000/redoc",
-      "health_check": "http://127.0.0.1:8000/api/v1/health"
+    {
+      "category": "Backend - Mypy",
+      "description": "Falta de anotaciones de variables (`var-annotated`) en varios archivos (ej. `update_admin_password.py`, `list_users_simple.py`, `debug_auth.py`, `create_admin.py`, `check_db.py`, `check_admin_password.py`, `test_mongodb_local.py`, `test_mongodb_connection.py`, `test_mongodb.py`, `test_mongo_connection.py`, `test_direct_connection.py`, `test_connection_fixed.py`, `list_users_script.py`, `list_users.py`)."
     },
-    "database_info": {
-      "name": "gemini_educador",
-      "collections": ["user_progress", "modules", "test_connection", "rewards", "users", "activities"],
-      "stats": {
-        "data_size_mb": 0.0,
-        "storage_size_mb": 0.07,
-        "index_size_mb": 0.28
-      }
+    {
+      "category": "Backend - Mypy",
+      "description": "Incompatibilidad de tipos (`assignment`, `return-value`, `arg-type`) en archivos como `check_config.py`, `app/core/config.py`, `app/db/mongodb.py`, `app/core/logging_config.py`, `app/repositories/token_repository.py`, `app/api/dependencies/auth.py`, `app/core/auth.py`, `app/api/v1/endpoints/auth.py`, `list_routes.py`, `tests/test_users.py`, `tests/test_auth_flow.py`)."
     },
-    "features": [
-      "API Documentada con Swagger UI",
-      "Autenticación JWT con refresh tokens",
-      "Modelos de datos implementados",
-      "Scripts de inicialización automática",
-      "Conexión a MongoDB Atlas",
-      "Usuario administrador preconfigurado"
-    ],
-    "port": 8000,
-    "docs_url": "http://localhost:8000/docs"
-  },
-  "frontend": {
-    "framework": "React + TypeScript",
-    "ui_library": "Chakra UI",
-    "status": "🚧 En desarrollo",
-    "features": [
-      "Autenticación con Supabase",
-      "Formularios con validación",
-      "Interfaz responsive",
-      "Tema oscuro/claro",
-      "Notificaciones",
-      "Chat en tiempo real"
-    ],
-    "pages": {
-      "auth": [
-        "/login",
-        "/register",
-        "/forgot-password",
-        "/reset-password"
-      ],
-      "app": [
-        "/dashboard",
-        "/chat",
-        "/profile",
-        "/settings"
-      ]
+    {
+      "category": "Backend - Mypy",
+      "description": "Errores de atributos (`attr-defined`) donde se intentan acceder a atributos que `mypy` no puede encontrar en ciertos objetos, especialmente en `app/api/v1/endpoints/users.py`, `main.py`, `app/main.py`, `list_routes.py`, `tests/test_auth_flow.py`."
     },
-    "state_management": "React Context + Redux Toolkit",
-    "http_client": "Axios",
-    "integrations": [
-      {
-        "name": "Supabase",
-        "type": "Authentication",
-        "status": "✅ Implementado",
-        "features": [
-          "Autenticación de usuarios",
-          "Gestión de sesiones",
-          "Almacenamiento seguro de contraseñas"
-        ]
-      },
-      {
-        "name": "n8n",
-        "type": "Automation & Chatbot",
-        "status": "✅ Implementado",
-        "features": [
-          "Webhook para procesamiento de mensajes",
-          "Respuestas automáticas basadas en IA",
-          "Integración con servicios externos"
-        ]
-      }
-    ],
-    "port": 3000,
-    "url": "http://localhost:3000"
-  },
-  "environment_config": {
-    "mongodb": {
-      "connection_string": "mongodb://localhost:27017/",
-      "database_name": "gemini_educador"
+    {
+      "category": "Backend - Mypy",
+      "description": "Errores de argumentos (`call-arg`) donde algunas llamadas a funciones tienen argumentos inesperados, como en `app/repositories/token_repository.py` y `tests/test_users.py` al llamar a `create_access_token`."
     },
-    "jwt": {
-      "secret_key": "tu_clave_secreta_muy_segura_aqui_123!",
-      "algorithm": "HS256",
-      "expire_minutes": 1440
+    {
+      "category": "Backend - Mypy",
+      "description": "Errores de sobrecarga (`call-overload`) en `app/models/chat_models.py`, donde las llamadas a `Field` no coinciden con ninguna de las sobrecargas definidas."
     },
-    "cors": {
-      "allowed_origins": [
-        "http://localhost:3000",
-        "http://127.0.0.1:3000"
-      ]
+    {
+      "category": "Backend - Mypy",
+      "description": "Errores de importación (`import-not-found`) en `app/api/v1/endpoints/auth.py`, lo que podría indicar un problema con la estructura del proyecto o la configuración de `mypy`."
+    },
+    {
+      "category": "Backend - Mypy",
+      "description": "Otros errores: `Statement is unreachable`, `classmethod used with a non-method`, `add of set does not return a value`, `Cannot assign to a method`, `Value of type Coroutine must be used` (y notas de `Are you missing an await?`)."
     }
-  },
-  "next_steps": [
-    "Configurar n8n localmente para el chatbot",
-    "Desarrollar módulo de Matemáticas",
-    "Implementar sistema de recompensas",
-    "Completar integración frontend-backend"
   ],
   "changelog": [
+    {
+      "date": "2025-07-04",
+      "changes": [
+        "Correcciones de errores de tipado y funcionalidad en el componente Chatbot del frontend.",
+        "Correcciones de errores de tipado en el backend (mypy), incluyendo la instalación de stubs de librerías, corrección de indentación en token_repository.py, eliminación de definición duplicada de UserResponse y corrección de anotaciones de tipo en app/models/user.py, corrección de importaciones y lógica en app/core/auth.py, y configuración de mypy en pyproject.toml."
+      ]
+    },
     {
       "date": "2025-06-28",
       "changes": [

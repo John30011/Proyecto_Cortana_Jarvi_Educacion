@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Image, Text, Badge, HStack, VStack, Flex, Icon } from '@chakra-ui/react';
+import { Box, Image, Text, Badge, HStack, VStack, Flex, Icon, Heading } from '@chakra-ui/react';
 import { FaStar, FaUserGraduate, FaClock } from 'react-icons/fa';
 import { Link as RouterLink } from 'react-router-dom';
-import { Activity } from '@/services/activities';
+import { Activity } from '../../../services/activities';
 
 interface ActivityCourseCardProps {
   activity: Activity;
@@ -13,7 +13,9 @@ const ActivityCourseCard: React.FC<ActivityCourseCardProps> = ({ activity }) => 
   const borderColor = 'gray.200';
   const textColor = 'gray.700';
   const mutedText = 'gray.500';
-  const levelColors = {
+  type DifficultyType = 'Fácil' | 'Intermedio' | 'Avanzado';
+  
+  const levelColors: Record<DifficultyType, string> = {
     'Fácil': 'green',
     'Intermedio': 'blue',
     'Avanzado': 'purple'
@@ -79,7 +81,7 @@ const ActivityCourseCard: React.FC<ActivityCourseCardProps> = ({ activity }) => 
       <VStack p={4} spacing={2} align="start" flex={1}>
         {/* Nivel del curso */}
         <Badge 
-          colorScheme={levelColors[activity.difficulty] || 'gray'}
+          colorScheme={levelColors[activity.difficulty as DifficultyType] || 'gray'}
           borderRadius="full"
           px={2}
           py={1}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SimpleGrid, Box, Heading, Button, HStack, useColorModeValue } from '@chakra-ui/react';
 import ActivityCard from './ActivityCard';
-import { getAllActivities } from '@/services/activities';
+import { getAllActivities } from '../../services/activities';
 
 const ActivitiesGrid = () => {
   const textColor = useColorModeValue('gray.700', 'white');
