@@ -1,0 +1,75 @@
+{
+  "module": "science",
+  "version": "1.0.0",
+  "lastUpdated": "2025-07-04T14:15:00-04:00",
+  "features": [
+    {
+      "name": "Interfaz de Usuario",
+      "description": "Diseño responsivo y amigable para niños con soporte para tema claro/oscuro",
+      "status": "completed",
+      "components": ["ScienceModule", "ScienceCard"]
+    },
+    {
+      "name": "Gestión de Contenido",
+      "description": "Sistema para mostrar experimentos y datos científicos",
+      "status": "completed",
+      "components": ["ExperimentsListPage", "FactsPage"]
+    },
+    {
+      "name": "Sistema de Búsqueda",
+      "description": "Búsqueda y filtrado de contenido por categorías y términos",
+      "status": "completed",
+      "components": ["ScienceModule"]
+    },
+    {
+      "name": "Sistema de Cuestionarios",
+      "description": "Cuestionarios interactivos para evaluar el aprendizaje",
+      "status": "pending",
+      "components": ["QuizPage", "QuizResultsPage"]
+    }
+  ],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@chakra-ui/react": "^2.8.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.16.0",
+    "react-icons": "^4.10.0",
+    "react-router-dom": "^6.15.0",
+    "typescript": "^5.1.6"
+  },
+  "contributors": [
+    {
+      "name": "Jonathan Blanco",
+      "role": "Desarrollador Frontend",
+      "email": "jblanco@example.com"
+    }
+  ],
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2025-07-04",
+      "changes": [
+        "Versión inicial del módulo de ciencia",
+        "Implementación de la interfaz de usuario principal",
+        "Integración con el sistema de rutas principal",
+        "Documentación inicial"
+      ]
+    }
+  ],
+  "knownIssues": [
+    {
+      "id": "SCI-001",
+      "description": "El componente de cuestionarios aún está en desarrollo",
+      "severity": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "SCI-002",
+      "description": "Falta implementar la persistencia de calificaciones",
+      "severity": "low",
+      "status": "backlog"
+    }
+  ]
+}

@@ -2,13 +2,14 @@ export type AgeGroup = '3-5' | '6-8' | '9-12';
 export type ScienceTopic = 'biology' | 'chemistry' | 'physics' | 'space' | 'earth' | 'animals' | 'human-body' | 'technology' | 'environment';
 
 export interface ScienceFact {
+  id: string;
+  title: string;
+  description: string;
   fact: string;
   imageUrl?: string;
-  topics?: string[];
-  id?: string;
-  title?: string;
-  description?: string;
-  ageGroup?: '3-5' | '6-8' | '9-12';
+  topics: ScienceTopic[];
+  ageGroup: AgeGroup;
+  rating?: number;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -25,6 +26,8 @@ export interface ScienceExperiment {
   duration: number;
   difficulty: 'easy' | 'medium' | 'hard';
   imageUrl?: string;
+  rating?: number;
+  students?: number;
 }
 
 export interface ScienceQuestion {

@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { Box, Spinner, useColorModeValue } from '@chakra-ui/react';
 
 // Páginas
-import ScienceModule from '../ScienceModule';
+import ScienceModule from './ScienceModule';
 
 // Componentes de carga
 const LoadingSpinner = () => (

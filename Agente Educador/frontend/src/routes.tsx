@@ -4,6 +4,8 @@ import { Spinner } from '@chakra-ui/react';
 import MainLayout from './layouts/MainLayout';
 import AuthLayout from './layouts/AuthLayout';
 import CursosRoutes from './modules/cursos/routes';
+import HistoryRoutes from './modules/history/routes';
+import ScienceRoutes from './modules/science/routes';
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.default })));
@@ -42,6 +44,12 @@ const AppRoutes = () => {
         
         {/* Rutas de cursos */}
         <Route path="/cursos/*" element={<CursosRoutes />} />
+        
+        {/* Rutas de historia */}
+        <Route path="/history/*" element={<HistoryRoutes />} />
+        
+        {/* Rutas de ciencia */}
+        <Route path="/science/*" element={<ScienceRoutes />} />
         
         {/* Rutas de autenticación */}
         <Route path="/auth/register" element={<AuthLayout><Register /></AuthLayout>} />
