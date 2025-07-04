@@ -1,0 +1,183 @@
+# Definir el manejo de finales de línea
+* text=auto eol=lf
+
+# Archivos binarios que deben mantenerse como están
+*.{png,jpg,jpeg,gif,ico,svg,woff,woff2,ttf,eot} binary
+*.{pdf,zip,rar,7z,doc,docx,xls,xlsx,ppt,pptx} binary
+
+# Archivos de script que deben tener finales de línea LF
+*.sh text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.conf text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=lf
+
+# Archivos específicos de Windows que deben tener finales de línea CRLF
+*.sln text eol=crlf
+*.vcxproj text eol=crlf
+*.vcxproj.filters text eol=crlf
+*.vcxproj.user text eol=crlf
+*.vcxproj.*.user text eol=crlf
+*.sln text eol=crlf
+*.vcxproj text eol=crlf
+*.vcxproj.filters text eol=crlf
+*.vcxproj.user text eol=crlf
+*.vcxproj.*.user text eol=crlf
+
+# Archivos que no deben ser rastreados
+.gitattributes export-ignore
+.gitignore export-ignore
+.gitmodules export-ignore
+
+# Archivos de documentación que no necesitan ser rastreados
+README.md export-ignore
+CONTRIBUTING.md export-ignore
+CODE_OF_CONDUCT.md export-ignore
+CHANGELOG.md export-ignore
+LICENSE export-ignore
+
+# Archivos de configuración de IDEs y editores
+.vscode/ export-ignore
+.idea/ export-ignore
+*.sublime-project export-ignore
+*.sublime-workspace export-ignore
+*.code-workspace export-ignore
+
+# Archivos de entorno
+.env export-ignore
+.env.* export-ignore
+!.env.example
+
+# Archivos de logs y bases de datos locales
+*.log export-ignore
+*.sqlite export-ignore
+*.sqlite3 export-ignore
+*.db export-ignore
+
+# Directorios de dependencias y paquetes
+node_modules/ export-ignore
+bower_components/ export-ignore
+jspm_packages/ export-ignore
+
+# Directorios de compilación y distribución
+build/ export-ignore
+dist/ export-ignore
+out/ export-ignore
+coverage/ export-ignore
+.nyc_output/ export-ignore
+
+# Directorios de caché
+.cache/ export-ignore
+.npm/ export-ignore
+.yarn/ export-ignore
+.pnp.* export-ignore
+
+# Archivos de sistema operativo
+.DS_Store export-ignore
+Thumbs.db export-ignore
+desktop.ini export-ignore
+
+# Archivos de documentación generados
+docs/_build/ export-ignore
+
+# Archivos de preprocesadores CSS
+.sass-cache/ export-ignore
+
+# Archivos de TypeScript
+*.tsbuildinfo export-ignore
+
+# Archivos de configuración de TypeScript
+tsconfig.tsbuildinfo export-ignore
+
+# Archivos de configuración de Babel
+.babelrc export-ignore
+
+# Archivos de configuración de Webpack
+webpack.config.js export-ignore
+
+# Archivos de configuración de Jest
+jest.config.js export-ignore
+
+# Archivos de configuración de ESLint
+.eslintrc.js export-ignore
+
+# Archivos de configuración de Prettier
+.prettierrc.js export-ignore
+
+# Archivos de configuración de Browserslist
+.browserslistrc export-ignore
+
+# Archivos de configuración de TypeScript
+tsconfig.json export-ignore
+tsconfig.*.json export-ignore
+
+# Archivos de configuración de Node.js
+.nvmrc export-ignore
+.npmrc export-ignore
+.yarnrc export-ignore
+
+# Archivos de configuración de Docker
+.dockerignore export-ignore
+Dockerfile* export-ignore
+docker-compose*.yml export-ignore
+
+# Archivos de configuración de Kubernetes
+*.yaml export-ignore
+*.yml export-ignore
+!k8s/ export-ignore
+
+# Archivos de configuración de Terraform
+.terraform/ export-ignore
+*.tfstate export-ignore
+*.tfstate.* export-ignore
+*.tfvars export-ignore
+.terraform.lock.hcl export-ignore
+
+# Archivos de configuración de Ansible
+ansible.cfg export-ignore
+hosts export-ignore
+
+# Archivos de configuración de Vagrant
+Vagrantfile export-ignore
+.vagrant/ export-ignore
+
+# Archivos de configuración de Packer
+packer_cache/ export-ignore
+
+# Archivos de configuración de Terraform
+.terraform/ export-ignore
+*.tfstate export-ignore
+*.tfstate.* export-ignore
+*.tfvars export-ignore
+.terraform.lock.hcl export-ignore
+
+# Archivos de configuración de Ansible
+ansible.cfg export-ignore
+hosts export-ignore
+
+# Archivos de configuración de Vagrant
+Vagrantfile export-ignore
+.vagrant/ export-ignore
+
+# Archivos de configuración de Packer
+packer_cache/ export-ignore
+
+# Archivos de configuración de Terraform
+.terraform/ export-ignore
+*.tfstate export-ignore
+*.tfstate.* export-ignore
+*.tfvars export-ignore
+.terraform.lock.hcl export-ignore

@@ -1,0 +1,79 @@
+# Core
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+python-multipart==0.0.6
+
+# Base de datos
+motor==3.3.2
+pymongo[srv,tls]==4.5.0
+
+# Autenticación y seguridad
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.0
+python-jose[cryptography]==3.3.0
+email-validator==1.3.1
+
+# Validación de datos
+pydantic==1.10.13
+
+# HTTP y API
+httpx==0.25.1
+requests==2.31.0
+
+# Procesamiento de lenguaje natural
+# nltk==3.8.1
+# spacy==3.7.2
+
+# Procesamiento de imágenes
+# Pillow==10.1.0
+
+# Utilidades
+tqdm==4.66.1
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Desarrollo
+autopep8==2.0.4
+pylint==3.0.2
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+
+# Documentación
+# mkdocs==1.5.3
+# mkdocs-material==9.4.1
+
+# Despliegue
+gunicorn==21.2.0
+# uvloop==0.19.0
+
+# Procesamiento de texto
+python-slugify==8.0.1
+
+# Manejo de archivos
+aiofiles==23.2.1
+
+# Caché
+aiocache==0.12.1
+
+# Validación de URLs
+validators==0.22.0
+
+# Procesamiento de JSON
+# orjson==3.9.10
+
+# Seguridad
+python-keycloak==3.8.0
+
+# Procesamiento de lenguaje natural
+# nltk==3.8.1
+# spacy==3.7.2
+
+# Procesamiento de imágenes
+# Pillow==10.1.0
+
+# Utilidades
+tqdm==4.66.1
+python-dateutil==2.8.2
+pytz==2023.3

@@ -1,0 +1,294 @@
+# Dependencias
+node_modules/
+frontend/node_modules/
+frontend/.vite/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Entornos virtuales de Python
+venv/
+env/
+ENV/
+
+# Archivos de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Caché
+.cache/
+coverage/
+
+# Build
+dist/
+build/
+
+# MongoDB
+data/
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archivos de desarrollo local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de configuración local
+config/local.json
+
+# Archivos de depuración
+*.log
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de Python
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Archivos de Jupyter Notebook
+.ipynb_checkpoints
+
+# Archivos de PyCharm
+.idea/
+
+# Archivos de VS Code
+.vscode/
+
+# Archivos de PyTest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Archivos de mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Archivos de Pyre
+.pyre/
+
+# Archivos de Pytype
+.pytype/
+
+# Archivos de Cython
+*.c
+
+# Archivos de C
+*.o
+
+# Archivos de C++
+*.cpp
+*.hpp
+
+# Archivos de Java
+*.class
+*.jar
+
+# Archivos de TypeScript
+*.tsbuildinfo
+
+# Archivos de Next.js
+.next/
+out/
+
+# Archivos de Nuxt.js
+.nuxt/
+.nuxt-proxy
+.nuxt-storybook
+
+# Archivos de Gatsby
+.cache/
+public
+
+# Archivos de Angular
+.angular/
+
+# Archivos de Svelte
+.svelte-kit/
+
+# Archivos de Vite
+.vite/
+
+# Archivos de Rollup
+.rollup.cache/
+
+# Archivos de Parcel
+.parcel-cache/
+
+# Archivos de Storybook
+.storybook/
+storybook-static/
+
+# Archivos de Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Archivos de Playwright
+playwright-report/
+test-results/
+
+# Archivos de Puppeteer
+.puppeteer/
+
+# Archivos de WebDriver
+.webdriver/
+
+# Archivos de Selenium
+.selenium/
+
+# Archivos de Docker
+.docker/
+
+# Archivos de Kubernetes
+.kubernetes/
+
+# Archivos de Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform.lock.hcl
+
+# Archivos de Vagrant
+.vagrant/
+
+# Archivos de Ansible
+*.retry
+
+# Archivos de Packer
+packer_cache/
+
+# Archivos de Vault
+.vault/
+
+# Archivos de Consul
+.consul/
+
+# Archivos de Nomad
+.nomad/
+
+# Archivos de Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform.lock.hcl
+
+# Archivos de Terragrunt
+.terragrunt-cache/
+
+# Archivos de Pulumi
+.pulumi/
+
+# Archivos de Serverless Framework
+.serverless/
+
+# Archivos de AWS SAM
+.aws-sam/
+
+# Archivos de CDK
+.cdk.out/
+cdk.out/
+*.cdk.out/
+
+# Archivos de Serverless Framework
+.serverless/
+
+# Archivos de AWS SAM
+.aws-sam/
+
+# Archivos de CDK
+.cdk.out/
+cdk.out/
+*.cdk.out/
+
+# Archivos de Serverless Framework
+.serverless/
+
+# Archivos de AWS SAM
+.aws-sam/
+
+# Archivos de CDK
+.cdk.out/
+cdk.out/
+*.cdk.out/
+
+# Archivos de Serverless Framework
+.serverless/
+
+# Archivos de AWS SAM
+.aws-sam/
+
+# Archivos de CDK
+.cdk.out/
+cdk.out/
+*.cdk.out/
+
+# Archivos de Serverless Framework
+.serverless/
+
+# Archivos de AWS SAM
+.aws-sam/
+
+# Archivos de CDK
+.cdk.out/
+cdk.out/
+*.cdk.out/
